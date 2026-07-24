@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elder Dashboard | YAH's Misfits</title>
+    <meta name="description" content="Private elder dashboard for managing clients, coursework, and ministry operations.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="../index.html">Enter Website</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-editor-management-page" aria-labelledby="editor-title">
+        <h2 id="editor-title">Elder Dashboard</h2>
+        <div class="connect-copy portal-welcome-copy">
+          <p data-portal-welcome data-portal-welcome-template="elder-client-management">Loading your elder account...</p>
+          <nav class="portal-editor-tabs portal-builder-tabs portal-elder-primary-tabs" aria-label="Elder workspace sections">
+            <a class="portal-editor-tab portal-editor-tab-active" href="/portal/editor.html">Dashboard</a>
+            <a class="portal-editor-tab" href="clients.html">Clients</a>
+            <a class="portal-editor-tab" href="applications.html">Members</a>
+            <a class="portal-editor-tab" href="assessments.html">Assessments</a>
+            <a class="portal-editor-tab" href="messages.html">Messages</a>
+            <a class="portal-editor-tab" href="management.html">Website</a>
+          </nav>
+        </div>
+
+        <section class="portal-program-workspaces" aria-labelledby="gate-path-workspaces">
+          <div class="portal-section-heading" id="gate-path-workspaces">
+            <h3>Gate Path Workspaces</h3>
+            <p>Open a course workspace to manage syllabus details, module order, assignments, and required reading.</p>
+          </div>
+
+          <div class="portal-workspace-grid" aria-label="Gate path workspaces">
+            <a class="portal-workspace-card portal-workspace-card-primary" href="widows-coursework.html">
+              <span>Widows</span>
+              <strong>Open Widows Course Builder</strong>
+            </a>
+            <div class="portal-workspace-card portal-workspace-card-disabled" aria-disabled="true">
+              <span>Orphans</span>
+              <strong>Workspace coming next</strong>
+            </div>
+            <div class="portal-workspace-card portal-workspace-card-disabled" aria-disabled="true">
+              <span>Patriarchs</span>
+              <strong>Workspace coming next</strong>
+            </div>
+          </div>
+        </section>
+
+        <form class="connect-form portal-builder-form portal-client-program-form" aria-label="Add client to a program" data-client-portal-form>
+          <p class="portal-message" data-client-portal-message hidden></p>
+          <fieldset class="form-section">
+            <legend>Add Client to Program</legend>
+            <label>
+              Connect Finished Program Application
+              <select name="application_id" data-qahal-application-select>
+                <option value="">Choose an application</option>
+              </select>
+            </label>
+            <label>
+              Client Name
+              <input type="text" name="client_name" required>
+            </label>
+            <label>
+              Client Email
+              <input type="email" name="client_email" required>
+            </label>
+            <label>
+              Program Title
+              <input type="text" name="portal_title" required>
+            </label>
+            <label>
+              Program
+              <select name="account_type" required>
+                <option value="">Choose a program</option>
+                <option value="Widows">Widows</option>
+                <option value="Orphans">Orphans</option>
+                <option value="Patriarchs">Patriarchs</option>
+              </select>
+            </label>
+            <a class="portal-inline-link" href="widows-coursework.html">Review the Widows syllabus and module sequence</a>
+            <label>
+              Starting Assignment
+              <textarea name="first_assignment" rows="5" placeholder="Add the first lesson, reading, or task to start this client in the selected program."></textarea>
+            </label>
+            <button class="button primary" type="submit">Add client to program</button>
+          </fieldset>
+        </form>
+
+        <aside class="portal-panel portal-next-steps portal-members-panel" id="portal-login-users" aria-label="Gate members">
+          <h3>Gate Members</h3>
+          <div class="portal-client-list" data-portal-user-list>
+            <p>Loading gate members...</p>
+          </div>
+        </aside>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

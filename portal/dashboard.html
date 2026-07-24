@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Home | YAH's Misfits</title>
+    <meta name="description" content="Private YAH's Misfits course home for assigned learning and elder feedback.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+        <div class="header-actions" aria-label="Gate actions">
+          <a class="header-button" href="../index.html">Enter Website</a>
+          <button class="header-button" type="button" data-portal-logout>Sign out</button>
+        </div>
+      </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-dashboard-shell" aria-labelledby="portal-dashboard-title">
+        <h2 id="portal-dashboard-title">Course Home</h2>
+        <div class="connect-copy portal-dashboard-welcome">
+          <p data-portal-welcome>Loading your account...</p>
+        </div>
+        <p class="portal-message portal-member-preview-note" data-member-preview-note hidden>
+          Previewing client course access as an elder.
+        </p>
+
+        <nav class="portal-course-home-nav" aria-label="Course home sections">
+          <a class="is-active" href="#course-overview">Course Home</a>
+          <a href="#modules">Modules</a>
+          <a href="#assignments">Assignments</a>
+          <a href="#documents">Documents</a>
+          <a href="#reading">Reading</a>
+          <a href="#submissions">Submissions</a>
+          <a href="messages.html">Messages</a>
+        </nav>
+
+        <section class="portal-course-home-overview" id="course-overview" aria-label="Assigned course overview">
+          <article class="portal-course-summary" data-portal-assignment>
+            <p>Loading your assigned course...</p>
+          </article>
+          <aside class="portal-course-status" aria-label="Course progress">
+            <h3>Progress</h3>
+            <div data-course-progress-summary>
+              <p>Loading progress...</p>
+            </div>
+            <div class="portal-next-assignment" data-course-next-assignment></div>
+          </aside>
+        </section>
+
+        <section class="portal-panel portal-course-home-section" id="modules" aria-labelledby="modules-title">
+          <h3 id="modules-title">Modules</h3>
+          <div class="course-module-grid portal-student-module-roadmap" data-course-module-roadmap>
+            <p>Loading module sequence...</p>
+          </div>
+        </section>
+
+        <section class="portal-panel portal-next-steps portal-dashboard-coursework-panel portal-course-home-section" id="assignments" aria-label="Assigned personal coursework">
+          <h3>Assignments</h3>
+          <div class="portal-client-list portal-dashboard-coursework-list portal-dashboard-coursework-grid" data-my-coursework-list>
+            <p>Loading assigned coursework...</p>
+          </div>
+        </section>
+
+        <section class="portal-panel portal-course-home-section portal-reading-section" id="reading" aria-label="Required reading" data-portal-reading-list hidden>
+          <h3>Required Reading</h3>
+          <div data-portal-reading-content></div>
+        </section>
+
+        <section class="portal-panel portal-course-home-section portal-reading-section" id="documents" aria-label="Course documents">
+          <h3>Documents</h3>
+          <div class="portal-workspace-grid portal-document-grid" data-my-documents-list>
+            <p>Loading documents...</p>
+          </div>
+        </section>
+
+        <section class="portal-course-submission-tools portal-course-home-section" id="submissions" aria-labelledby="submissions-title">
+          <h3 id="submissions-title">Submissions &amp; Reflection</h3>
+          <div class="portal-dashboard-tab-row">
+            <details class="portal-dashboard-tab">
+              <summary>Daily Task Report</summary>
+              <form class="connect-form portal-path-form" aria-label="Submit daily task report" data-daily-task-report-form>
+                <p class="portal-message" data-daily-task-report-message hidden></p>
+                <fieldset class="form-section">
+                  <legend>Daily Task Report</legend>
+                  <label>Report Date<input type="date" name="report_date" required></label>
+                  <label>Tasks Completed<textarea name="completed_tasks" rows="4" placeholder="List the tasks, readings, lessons, or assignments completed today."></textarea></label>
+                  <label>Progress Notes<textarea name="progress_notes" rows="4" placeholder="Share what you learned, where you grew, or what changed."></textarea></label>
+                  <label>Blockers or Questions<textarea name="blockers" rows="3" placeholder="Note anything that slowed your progress or needs elder follow-up."></textarea></label>
+                  <label>Next Steps<textarea name="next_steps" rows="3" placeholder="What will you work on next?"></textarea></label>
+                  <button class="button primary" type="submit">Submit daily report</button>
+                </fieldset>
+              </form>
+            </details>
+            <details class="portal-dashboard-tab">
+              <summary>Journal Entry</summary>
+              <form class="connect-form portal-path-form" aria-label="Submit journal entry" data-client-reflection-form="journal">
+                <p class="portal-message" data-client-reflection-message="journal" hidden></p>
+                <fieldset class="form-section">
+                  <legend>Journal Entry</legend>
+                  <input type="hidden" name="reflection_type" value="journal">
+                  <label>Entry Date<input type="date" name="reflection_date" required></label>
+                  <label>Journal Title<input type="text" name="title" placeholder="Optional title"></label>
+                  <label>Journal Entry<textarea name="body" rows="7" placeholder="Write anything you want elders to see about your growth, prayer, obedience, questions, or progress." required></textarea></label>
+                  <button class="button primary" type="submit">Submit journal entry</button>
+                </fieldset>
+              </form>
+            </details>
+            <details class="portal-dashboard-tab">
+              <summary>Dream Entry</summary>
+              <form class="connect-form portal-path-form" aria-label="Submit dream for elder review" data-client-reflection-form="dream">
+                <p class="portal-message" data-client-reflection-message="dream" hidden></p>
+                <fieldset class="form-section">
+                  <legend>Dream Entry</legend>
+                  <input type="hidden" name="reflection_type" value="dream">
+                  <label>Dream Date<input type="date" name="reflection_date" required></label>
+                  <label>Dream Title<input type="text" name="title" placeholder="Optional title"></label>
+                  <label>Dream Details<textarea name="body" rows="7" placeholder="Share the dream, symbols, people, words, timing, and anything that stood out so elders can review and discern whether it may be prophetic." required></textarea></label>
+                  <button class="button primary" type="submit">Submit dream for elder review</button>
+                </fieldset>
+              </form>
+            </details>
+          </div>
+        </section>
+
+        <section class="portal-panel portal-next-steps portal-dashboard-reflection-panel portal-course-home-section" aria-label="Submitted journals and dreams">
+          <h3>Feedback &amp; Submitted Reflections</h3>
+          <div class="portal-client-list portal-dashboard-reflection-list" data-my-reflection-list>
+            <p>Loading submitted entries...</p>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

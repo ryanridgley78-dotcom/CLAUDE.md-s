@@ -1,0 +1,41 @@
+node_modules/
+.wrangler/
+.cloudflare-deploy/
+.dev.vars
+.env
+*.log
+
+# Local tool caches / scratch, not part of the deployed site
+.tools/
+.agents/
+.codex/
+.brochure-render/
+.widows-half-render/
+tmp/
+tools/
+
+# Generated production artifacts (video, audio, decks, print files) — not source
+deliverables/
+outputs/
+output/
+
+# Unrelated side project living in this same folder
+love-in-layers/
+love-in-layers-project/
+
+# Marketing/brochure source files and old design screenshots — not site code
+Applications
+*.docx
+Office Depot Brochure Files/
+Brochure *.png
+Brochure *.jpg
+.tmp_brochure_conference.png
+hero-*-preview.png
+no-*-preview.png
+ryan-*-preview.png
+yahsmisfits-*-live.png
+yahsmisfits-*-preview.png
+yahsmisfits-site.zip
+YHWHs-Misfits-*.docx
+YHWHs-Misfits-*.png
+rewritten-paper-obedience-as-love.md

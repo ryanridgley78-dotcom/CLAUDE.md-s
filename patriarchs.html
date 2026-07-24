@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Patriarch Application | YAH's Misfits</title>
+    <meta name="description" content="Patriarch application for YAH's Misfits foster headship consideration.">
+    <meta property="og:title" content="Patriarch Application | YAH's Misfits">
+    <meta property="og:description" content="Patriarch application for YAH's Misfits foster headship consideration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yahsmisfits.com/patriarchs.html">
+    <meta property="og:image" content="https://yahsmisfits.com/assets/hero-yhwh-misfits.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles.css?v=20260619-patriarch-referral-list">
+  </head>
+  <body class="inner-page application-compact-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page application-form-page patriarch-application-paused" aria-labelledby="application-title">
+        <h2 id="application-title">Patriarch Application</h2>
+        <div class="connect-copy">
+          <p>
+            The patriarch application is available only after a referral letter or document has been connected.
+          </p>
+          <p>
+            Provide the referral code and attach the supporting letter before the applicant continues.
+          </p>
+        </div>
+        <p class="portal-message application-preview-notice" data-patriarch-preview-notice hidden>
+          Private elder/admin preview. This application remains unavailable from the public Ministry Focus page.
+        </p>
+        <p class="portal-message application-preview-notice" data-patriarch-preview-denied data-state="error" hidden>
+          Sign in with elder/admin access from Website Management to preview this application.
+        </p>
+        <form class="connect-form patriarch-application-form" action="/api/application-submit" method="POST" enctype="multipart/form-data" data-patriarch-application-form>
+          <input type="hidden" name="_subject" value="Patriarch Application">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="application" value="Patriarch">
+          <input type="hidden" name="referral_record_id" data-patriarch-referral-id>
+          <input type="hidden" name="referral_token" data-patriarch-referral-token>
+
+          <p class="portal-message" data-patriarch-referral-message hidden></p>
+
+          <fieldset class="form-section patriarch-referral-gate" data-patriarch-referral-gate>
+            <legend>Referral Letter Requirement</legend>
+            <p class="form-note">
+              This step must be completed before the Patriarch application opens.
+            </p>
+            <label>
+              Referral Code
+              <input type="text" name="referral_code" autocomplete="off" required>
+            </label>
+            <label>
+              Referral Letter / Document
+              <input type="file" name="referral_letter" accept=".pdf,.doc,.docx,.txt,.rtf,.png,.jpg,.jpeg,.webp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,text/rtf,application/rtf,image/png,image/jpeg,image/webp" required>
+            </label>
+            <label>
+              Referral Notes
+              <textarea name="referral_notes" rows="4" placeholder="Optional context for this referral."></textarea>
+            </label>
+            <button class="button secondary" type="button" data-patriarch-referral-unlock>Connect Referral and Open Application</button>
+          </fieldset>
+
+          <div class="patriarch-application-fields" data-patriarch-application-fields hidden aria-hidden="true">
+          <fieldset class="form-section">
+            <legend>Candidate Identification</legend>
+            <label>
+              Full Name
+              <input type="text" name="full_name" autocomplete="name" required>
+            </label>
+            <label>
+              Date of Birth
+              <input type="date" name="date_of_birth">
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Is it okay to contact you by text?
+              <select name="contact_by_text" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Is it okay to contact you by phone?
+              <select name="contact_by_phone" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Is it okay to leave a message?
+              <select name="okay_to_leave_message" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Current Address
+              <textarea name="current_address" rows="3" autocomplete="street-address" required></textarea>
+            </label>
+            <label>
+              Marital Status
+              <select name="marital_status" required>
+                <option value="">Select one</option>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Polygynous</option>
+              </select>
+            </label>
+            <label>
+              Number of wives, if applicable
+              <input type="number" name="number_of_wives" min="0">
+            </label>
+            <label>
+              Children in household
+              <input type="number" name="children_in_household" min="0">
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Purpose of Application</legend>
+            <p class="form-note">Select all that apply.</p>
+            <div class="checkbox-grid">
+              <label class="choice-label"><input type="checkbox" name="application_purpose[]" value="Initial qualification"> Initial qualification</label>
+              <label class="choice-label"><input type="checkbox" name="application_purpose[]" value="Foster headship consideration"> Foster headship consideration</label>
+              <label class="choice-label"><input type="checkbox" name="application_purpose[]" value="Household leadership review"> Household leadership review</label>
+              <label class="choice-label"><input type="checkbox" name="application_purpose[]" value="Counsel and sharpening"> Counsel and sharpening</label>
+            </div>
+            <label>
+              Briefly explain why you are applying
+              <textarea name="application_purpose_explanation" rows="4" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Covenant Order & Oversight</legend>
+            <label>
+              Do you affirm divine hierarchy as described in 1 Corinthians 11:3?
+              <select name="affirms_divine_hierarchy" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Partial</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to receive elder oversight?
+              <select name="willing_elder_oversight" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Conditional</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are there any unresolved legal, household, or relational matters that need review?
+              <select name="unresolved_violations" required>
+                <option value="">Select one</option>
+                <option>No known concern</option>
+                <option>Needs explanation</option>
+                <option>Yes</option>
+              </select>
+            </label>
+            <label>
+              Current household order
+              <select name="current_household_order" required>
+                <option value="">Select one</option>
+                <option>Established</option>
+                <option>Developing</option>
+                <option>Needs correction</option>
+              </select>
+            </label>
+            <label>
+              Describe the current order and structure of your household
+              <textarea name="household_order_description" rows="5" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Provision & Resource Capability</legend>
+            <label>
+              Provision Status
+              <select name="provision_status" required>
+                <option value="">Select one</option>
+                <option>Sufficient</option>
+                <option>Marginal</option>
+                <option>Insufficient</option>
+              </select>
+            </label>
+            <label>
+              Financial Stability
+              <select name="financial_stability">
+                <option value="">Select one</option>
+                <option>Currently unstable</option>
+                <option>Limited or stretched</option>
+                <option>Basic needs are consistently met</option>
+                <option>Stable with margin</option>
+                <option>Strong capacity to provide for others</option>
+              </select>
+            </label>
+            <label>
+              Housing Adequacy
+              <select name="housing_adequacy">
+                <option value="">Select one</option>
+                <option>Currently inadequate</option>
+                <option>Limited or unstable housing</option>
+                <option>Adequate for current household</option>
+                <option>Stable with some room for support</option>
+                <option>Strong capacity to house others responsibly</option>
+              </select>
+            </label>
+            <label>
+              Resource Management
+              <select name="resource_management">
+                <option value="">Select one</option>
+                <option>Needs significant growth</option>
+                <option>Inconsistent or still developing</option>
+                <option>Manages basic responsibilities</option>
+                <option>Responsible and orderly</option>
+                <option>Strong steward with proven discipline</option>
+              </select>
+            </label>
+            <label>
+              Capacity for Expansion
+              <select name="capacity_expansion">
+                <option value="">Select one</option>
+                <option>No current capacity</option>
+                <option>Very limited capacity</option>
+                <option>Possible with support and oversight</option>
+                <option>Ready for measured expansion</option>
+                <option>Strong capacity for added responsibility</option>
+              </select>
+            </label>
+            <label>
+              Notes on resources, housing, and provision
+              <textarea name="resource_notes" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Leadership & Authority</legend>
+            <label>
+              Leadership Posture
+              <select name="leadership_posture" required>
+                <option value="">Select one</option>
+                <option>Strong and stable</option>
+                <option>Developing</option>
+                <option>Weak or reactive</option>
+              </select>
+            </label>
+            <label>
+              Describe your leadership, mission, and household authority
+              <textarea name="leadership_notes" rows="5" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Emotional Discipline & Restraint</legend>
+            <label>
+              Notes on emotional discipline, restraint, and maturity
+              <textarea name="emotional_discipline_notes" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Current Household</legend>
+            <label>
+              Does your current household reflect order worth multiplying?
+              <select name="household_worth_multiplying" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Not yet</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Wife / wives feedback, if applicable
+              <select name="wives_feedback">
+                <option value="">Select one</option>
+                <option>Affirming</option>
+                <option>Mixed</option>
+                <option>Concerning</option>
+                <option>Not applicable</option>
+              </select>
+            </label>
+            <label>
+              Describe observed household conditions
+              <textarea name="observed_household_conditions" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Accountability & Motivation</legend>
+            <label>
+              Posture toward elders
+              <select name="posture_toward_elders" required>
+                <option value="">Select one</option>
+                <option>Aligned</option>
+                <option>Conditional</option>
+                <option>Resistant</option>
+              </select>
+            </label>
+            <label>
+              Primary motivation for participation
+              <select name="primary_motivation" required>
+                <option value="">Select one</option>
+                <option>Restoration and responsibility</option>
+                <option>Measured desire for household expansion</option>
+                <option>Emotional or impulsive</option>
+                <option>Needs elder review</option>
+              </select>
+            </label>
+            <label>
+              Explain your motivation
+              <textarea name="motivation_notes" rows="5" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Children Integration Readiness</legend>
+            <label>
+              Is structure for discipline established?
+              <select name="discipline_structure_established">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Partial</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Ability to handle non-biological children
+              <select name="non_biological_children_ability">
+                <option value="">Select one</option>
+                <option>Proven</option>
+                <option>Unproven</option>
+                <option>Concern</option>
+              </select>
+            </label>
+            <label>
+              Household capacity for added responsibility
+              <select name="added_responsibility_capacity">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Conditional</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Notes on children integration readiness
+              <textarea name="children_integration_notes" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Capacity & Concerns</legend>
+            <label>
+              Overall readiness, in your judgment
+              <select name="overall_readiness">
+                <option value="">Select one</option>
+                <option>Ready for review</option>
+                <option>Needs conditional review</option>
+                <option>Not ready yet</option>
+              </select>
+            </label>
+            <label>
+              Requested placement capacity
+              <select name="requested_capacity">
+                <option value="">Select one</option>
+                <option>Not requesting placement</option>
+                <option>1 participant</option>
+                <option>Multiple participants</option>
+              </select>
+            </label>
+            <p class="form-note">Select any concerns that may need review.</p>
+            <div class="checkbox-grid">
+              <label class="choice-label"><input type="checkbox" name="primary_concerns[]" value="Overextension"> Overextension</label>
+              <label class="choice-label"><input type="checkbox" name="primary_concerns[]" value="Authority misuse"> Authority misuse</label>
+              <label class="choice-label"><input type="checkbox" name="primary_concerns[]" value="Emotional instability"> Emotional instability</label>
+              <label class="choice-label"><input type="checkbox" name="primary_concerns[]" value="Household fracture concern"> Household fracture concern</label>
+              <label class="choice-label"><input type="checkbox" name="primary_concerns[]" value="Legal exposure"> Legal exposure</label>
+            </div>
+            <label>
+              Conditions, limits, or concerns elders should know
+              <textarea name="capacity_concern_notes" rows="5"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section agreement-section">
+            <legend>Statement & Consent</legend>
+            <p class="form-note">
+              A man cannot be approved to lead what he has not already proven he can govern.
+            </p>
+            <p class="form-note">
+              Any widows or fatherless households brought into alignment may require real provision,
+              cost, accountability, and ongoing responsibility from participating men.
+            </p>
+            <label>
+              Why should you be considered for the patriarch program?
+              <textarea name="consideration_reason" rows="6" required></textarea>
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="truthful_consent" value="Agreed" required>
+              I agree that the information provided is truthful and may be reviewed by ministry leadership.
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="digital_signature_consent" value="Agreed" required>
+              I agree this qualifys as my digital signature.
+            </label>
+            <label>
+              Applicant Name
+              <input type="text" name="applicant_signature_name" required>
+            </label>
+            <label>
+              Date
+              <input type="date" name="application_date" required>
+            </label>
+          </fieldset>
+
+          <button class="button primary" type="submit">Send application</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="script.js?v=20260724-elder-nav-flow"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

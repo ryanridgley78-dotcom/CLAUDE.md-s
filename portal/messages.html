@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Direct Messages | YAH's Misfits</title>
+    <meta name="description" content="Private YAH's Misfits gate direct messages for elders, admin, members, and clients.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell direct-message-page" aria-labelledby="direct-messages-title">
+        <h2 id="direct-messages-title">Direct Messages</h2>
+        <div class="connect-copy portal-welcome-copy">
+          <p data-portal-welcome>Loading your account...</p>
+        </div>
+
+        <form class="connect-form portal-path-form direct-message-form" aria-label="Send a direct message" data-portal-direct-message-form hidden>
+          <p class="portal-message" data-portal-direct-message-message hidden></p>
+          <fieldset class="form-section">
+            <legend data-direct-message-form-legend>Send Direct Message</legend>
+            <label>
+              Recipient
+              <select name="recipient_email" data-direct-message-recipient-select required>
+                <option value="">Choose a recipient</option>
+              </select>
+            </label>
+            <label>
+              Subject
+              <input type="text" name="subject" required>
+            </label>
+            <label>
+              Message
+              <textarea name="body" rows="6" required></textarea>
+            </label>
+            <button class="button primary" type="submit">Send direct message</button>
+          </fieldset>
+        </form>
+
+        <section class="portal-panel portal-next-steps direct-message-inbox" aria-labelledby="direct-message-inbox-title">
+          <h3 id="direct-message-inbox-title">Message Inbox</h3>
+          <div class="portal-client-list direct-message-list" data-portal-direct-message-list>
+            <p>Loading messages...</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

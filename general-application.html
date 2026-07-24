@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Join qahal Application | YAH's Misfits</title>
+    <meta name="description" content="Join qahal application for connecting with YAH's Misfits.">
+    <meta property="og:title" content="Join qahal Application | YAH's Misfits">
+    <meta property="og:description" content="Join qahal application for connecting with YAH's Misfits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yahsmisfits.com/general-application.html">
+    <meta property="og:image" content="https://yahsmisfits.com/assets/hero-yhwh-misfits.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page application-form-page" aria-labelledby="application-title">
+        <h2 id="application-title">Join qahal Application</h2>
+        <div class="connect-copy">
+          <p>
+            This application is for anyone who wants to connect with YHWH's Misfits, join the
+            virtual qahal, and be considered for fellowship, study, counsel, or service.
+          </p>
+          <p>
+            Share where you are, what you are seeking, and how you desire to walk with an assembly
+            committed to testing all things through Scripture.
+          </p>
+        </div>
+        <form class="connect-form" action="/api/application-submit" method="POST">
+          <input type="hidden" name="_subject" value="Join qahal Application">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="application" value="Join qahal">
+          <label class="spam-check-field" aria-hidden="true">
+            Website
+            <input type="text" name="_website" tabindex="-1" autocomplete="off">
+          </label>
+
+          <fieldset class="form-section">
+            <legend>Contact Information</legend>
+            <label>
+              Full Name
+              <input type="text" name="full_name" autocomplete="name" required>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>
+              City / State / Country
+              <input type="text" name="location" required>
+            </label>
+            <label>
+              Best Method of Contact
+              <select name="best_contact_method" required>
+                <option value="">Select one</option>
+                <option>Email</option>
+                <option>Phone</option>
+                <option>Text</option>
+              </select>
+            </label>
+            <label>
+              Preferred Time to Contact
+              <input type="text" name="preferred_contact_time" required>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>How You Want to Connect</legend>
+            <p class="form-note">Select all that apply.</p>
+            <div class="checkbox-grid" data-required-checkbox-group="connection_interest[]">
+              <label class="choice-label"><input type="checkbox" name="connection_interest[]" value="Join qahal"> Join qahal</label>
+              <label class="choice-label"><input type="checkbox" name="connection_interest[]" value="Torah study"> Torah study</label>
+              <label class="choice-label"><input type="checkbox" name="connection_interest[]" value="Fellowship"> Fellowship</label>
+              <label class="choice-label"><input type="checkbox" name="connection_interest[]" value="Counsel or coaching"> Counsel or coaching</label>
+              <label class="choice-label"><input type="checkbox" name="connection_interest[]" value="Ask questions"> Ask questions</label>
+            </div>
+            <label>
+              What drew you to YHWH's Misfits?
+              <textarea name="what_drew_you" rows="4" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Referral</legend>
+            <label>
+              Were you referred by someone?
+              <select name="referred_by_someone" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Referral Name
+              <input type="text" name="referral_name">
+            </label>
+            <label>
+              How did you hear about YHWH's Misfits?
+              <textarea name="how_you_heard" rows="4" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Faith & Study Background</legend>
+            <label>
+              Do you profess faith in YHWH and Yahushua?
+              <select name="profess_faith" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Learning</option>
+              </select>
+            </label>
+            <label>
+              Are you currently studying or walking in Torah?
+              <select name="torah_walk" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Learning</option>
+                <option>Not yet</option>
+              </select>
+            </label>
+            <label>
+              Do you observe Sabbath?
+              <select name="observe_sabbath" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Learning</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Briefly share your current faith background and study interests
+              <textarea name="faith_background" rows="5" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Household & Participation</legend>
+            <label>
+              Household Status
+              <select name="household_status" required>
+                <option value="">Select one</option>
+                <option>Single</option>
+                <option>Married</option>
+                <option>Polygynous</option>
+                <option>Family household</option>
+                <option>Widow / single mother</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Are you interested in live gatherings, studies, or online fellowship?
+              <select name="participation_interest" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>Maybe</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label>
+              What are you hoping to receive or contribute?
+              <textarea name="hopes_or_contribution" rows="5" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section agreement-section">
+            <legend>Final Notes</legend>
+            <label>
+              Is there anything else you would like the ministry to know?
+              <textarea name="additional_notes" rows="5"></textarea>
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="truthful_consent" value="Agreed" required>
+              I agree that the information provided is truthful and may be reviewed by YHWH's Misfits.
+            </label>
+            <label>
+              Applicant Name
+              <input type="text" name="applicant_signature_name" required>
+            </label>
+            <label>
+              Date
+              <input type="date" name="application_date" required>
+            </label>
+          </fieldset>
+
+          <button class="button primary" type="submit">Send application</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="script.js?v=20260724-elder-nav-flow"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

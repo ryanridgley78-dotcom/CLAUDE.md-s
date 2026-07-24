@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Widows/Orphans Application | YAH's Misfits</title>
+    <meta name="description" content="Widows and orphans care application for YAH's Misfits.">
+    <meta property="og:title" content="Widows/Orphans Application | YAH's Misfits">
+    <meta property="og:description" content="Widows and orphans care application for YAH's Misfits.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yahsmisfits.com/widows-orphans.html">
+    <meta property="og:image" content="https://yahsmisfits.com/assets/hero-yhwh-misfits.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles.css?v=20260625-widows-referral-combobox">
+  </head>
+  <body class="inner-page application-compact-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page application-form-page" aria-labelledby="application-title">
+        <h2 id="application-title">Widows/Orphans</h2>
+        <div class="connect-copy">
+          <p>
+            This application helps YHWH's Misfits understand the needs of widows, fatherless children,
+            single mothers, and households looking for faithful support.
+          </p>
+          <p>
+            Share your situation with clarity so the ministry can review your request, consider the
+            care that may be appropriate, and respond with wisdom.
+          </p>
+        </div>
+        <form class="connect-form" action="/api/application-submit" method="POST">
+          <input type="hidden" name="_subject" value="Widows/Orphans Application">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="application" value="Widows/Orphans">
+
+          <fieldset class="form-section">
+            <legend>Applicant Information</legend>
+            <label>
+              Full Name
+              <input type="text" name="full_name" autocomplete="name" required>
+            </label>
+            <div class="referral-combobox-field">
+              <span>Referred by:</span>
+              <div class="referral-combobox" data-referral-combobox>
+                <div class="referral-combobox-control">
+                  <input type="text" name="referred_by" placeholder="Select one" autocomplete="off" required data-referral-combobox-value>
+                  <button class="referral-combobox-toggle" type="button" aria-label="Show referral options" aria-expanded="false" data-referral-combobox-toggle>v</button>
+                </div>
+                <div class="referral-combobox-menu" data-referral-combobox-menu hidden>
+                  <button type="button" data-referral-combobox-option="Ryan Ridgley">Ryan Ridgley</button>
+                  <button type="button" data-referral-combobox-option="Ed Janicki">Ed Janicki</button>
+                  <button type="button" data-referral-combobox-option="Samuel Barnes">Samuel Barnes</button>
+                  <button type="button" data-referral-combobox-option="Jared Cheshire">Jared Cheshire</button>
+                  <button type="button" data-referral-combobox-option="David Stephan">David Stephan</button>
+                  <button type="button" data-referral-combobox-option="Paul Preston">Paul Preston</button>
+                  <div class="referral-combobox-other">
+                    <span>Other:</span>
+                    <input type="text" data-referral-combobox-other autocomplete="off" placeholder="Type name">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <label>
+              Date of Birth
+              <input type="date" name="date_of_birth" required>
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>
+              Email Address
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Is it okay to call and leave a voicemail?
+              <select name="okay_to_call_and_leave_voicemail" required>
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Current Address
+              <textarea name="current_address" rows="3" autocomplete="street-address" required></textarea>
+            </label>
+            <label>
+              City / State / Country
+              <input type="text" name="city_state_country" required>
+            </label>
+            <label>
+              Best Method of Contact
+              <input type="text" name="best_contact_method" required>
+            </label>
+            <label>
+              Preferred Time to Contact
+              <input type="text" name="preferred_contact_time">
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Household Status</legend>
+            <p class="form-note">Please select all that apply.</p>
+            <div class="checkbox-grid">
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Widow"> Widow</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Divorced Woman"> Divorced Woman</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Separated Woman"> Separated Woman</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Single Mother"> Single Mother</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Fatherless Child / Children"> Fatherless Child / Children</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Orphaned Child / Children"> Orphaned Child / Children</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Seeking Counsel Only"> Seeking Counsel Only</label>
+              <label class="choice-label"><input type="checkbox" name="household_status[]" value="Seeking Long-Term Covering / Headship Support"> Seeking Long-Term Covering / Headship Support</label>
+            </div>
+            <label>
+              Number of children in the household
+              <input type="number" name="number_of_children" min="0">
+            </label>
+            <label>
+              Ages of children
+              <input type="text" name="children_ages">
+            </label>
+            <label>
+              Are all children currently living with you?
+              <select name="children_living_with_applicant">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Do any children have special needs, medical needs, or behavioral concerns?
+              <select name="children_special_needs">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain
+              <textarea name="children_special_needs_explanation" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section covenant-section">
+            <legend>Covenant & Faith Background</legend>
+            <label>
+              Do you profess faith in YHWH and the Messiah (AKA Yahushua; Yahshua, Yeshua)?
+              <select name="profess_faith">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Do you currently seek to walk according to Torah?
+              <select name="torah_walk">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Unsure</option>
+              </select>
+            </label>
+            <label>
+              Do you observe Sabbath?
+              <select name="observe_sabbath">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Learning</option>
+              </select>
+            </label>
+            <label>
+              Do you observe YHWH's appointed times?
+              <select name="observe_appointed_times">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Learning</option>
+              </select>
+            </label>
+            <label>
+              Have you ever participated in spiritual practices outside of Scripture, such as astrology, tarot, divination, mediumship, spell work, energy work, manifestation rituals, or similar practices?
+              <select name="spiritual_practices_outside_scripture">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Unsure</option>
+                <option>Prefer to discuss with an elder</option>
+              </select>
+            </label>
+            <label>
+              If yes or unsure, please share what you are comfortable explaining
+              <textarea name="spiritual_practices_explanation" rows="4"></textarea>
+            </label>
+            <label>
+              Are there any spiritual influences, objects, teachings, groups, or practices in your home or past that you believe elders should know about?
+              <select name="spiritual_influences_to_review">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Unsure</option>
+                <option>Prefer to discuss with an elder</option>
+              </select>
+            </label>
+            <label>
+              If yes or unsure, explain anything that may help elders understand your background
+              <textarea name="spiritual_influences_explanation" rows="4"></textarea>
+            </label>
+            <label>
+              If accepted into the program, are you willing to receive counsel and correction concerning any spiritual practices that conflict with Scripture?
+              <select name="willing_spiritual_practices_counsel">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>I have questions</option>
+              </select>
+            </label>
+            <label>
+              Briefly describe your current walk, beliefs, and household convictions
+              <textarea name="faith_background" rows="5"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Current Headship Situation</legend>
+            <label>
+              Do you currently have a lawful husband, father, elder, or male covering involved in your life?
+              <select name="current_covering">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain who and what role he currently has
+              <textarea name="current_covering_explanation" rows="4"></textarea>
+            </label>
+            <label>
+              Is there current conflict involving a husband, former husband, father, family member, or civil authority?
+              <select name="current_conflict">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain
+              <textarea name="current_conflict_explanation" rows="4"></textarea>
+            </label>
+            <label>
+              Has any man formally abandoned, divorced, abused, neglected, or failed covenant responsibility toward you or your children?
+              <select name="abandonment_or_abuse">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain
+              <textarea name="abandonment_or_abuse_explanation" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Reason for Applying</legend>
+            <label>
+              Why are you applying to this program?
+              <textarea name="reason_for_applying" rows="5" required></textarea>
+            </label>
+            <p class="form-note">What type of help are you seeking? Select all that apply.</p>
+            <div class="checkbox-grid">
+              <label class="choice-label"><input type="checkbox" name="help_requested[]" value="Spiritual counsel"> Spiritual counsel</label>
+              <label class="choice-label"><input type="checkbox" name="help_requested[]" value="Fatherly mentorship for children"> Fatherly mentorship for children</label>
+              <label class="choice-label"><input type="checkbox" name="help_requested[]" value="Elder evaluation"> Elder evaluation</label>
+              <label class="choice-label"><input type="checkbox" name="help_requested[]" value="Long-term foster headship support"> Long-term foster headship support</label>
+              <label class="choice-label"><input type="checkbox" name="help_requested[]" value="Accountability and structure"> Accountability and structure</label>
+            </div>
+            <label>
+              Are you seeking in-person counsel or remote counsel?
+              <select name="counsel_preference">
+                <option value="">Select one</option>
+                <option>In-person counsel</option>
+                <option>Remote counsel</option>
+                <option>Either in-person or remote</option>
+                <option>Unsure / need to discuss</option>
+              </select>
+            </label>
+            <label>
+              Other help requested
+              <input type="text" name="other_help_requested">
+            </label>
+            <label>
+              What outcome are you hoping for?
+              <textarea name="desired_outcome" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Safety, Legal, and Custody Information</legend>
+            <label>
+              Are there active court orders, custody agreements, restraining orders, CPS cases, criminal cases, or pending legal matters involving you or your children?
+              <select name="active_legal_matters">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain
+              <textarea name="legal_matters_explanation" rows="4"></textarea>
+            </label>
+            <label>
+              Do you currently have legal custody of your children?
+              <select name="legal_custody">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Shared</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to provide documentation if needed?
+              <select name="provide_documentation">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Is there any immediate safety concern in your household?
+              <select name="immediate_safety_concern">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              If yes, explain
+              <textarea name="safety_concern_explanation" rows="4"></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Willingness to Submit to Program Order</legend>
+            <label>
+              Are you willing to be interviewed by ministry representatives or elders?
+              <select name="willing_interview">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to receive correction, instruction, and accountability?
+              <select name="willing_accountability">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to follow written program expectations if accepted?
+              <select name="willing_program_expectations">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to participate in a written agreement if required?
+              <select name="willing_covenant_agreement">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <label>
+              Are you willing and able to relocate if needed?
+              <select name="willing_able_to_relocate">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Unsure / need to discuss</option>
+              </select>
+            </label>
+            <label>
+              Are you willing to allow appropriate evaluation of your household before any placement, covering, or foster headship arrangement is considered?
+              <select name="willing_household_evaluation">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Applicant Statement</legend>
+            <label>
+              Please share your testimony, current situation, and why you believe this ministry may be able to help your household
+              <textarea name="applicant_statement" rows="7" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="form-section agreement-section">
+            <legend>Agreement & Consent</legend>
+            <p class="form-note">
+              This application does not guarantee acceptance. The ministry may request further
+              interviews, documentation, or elder review. The ministry does not replace
+              lawful civil authority, courts, medical professionals, or legal counsel. Any assistance
+              offered must remain within lawful, ethical, and Torah boundaries.
+            </p>
+            <label class="choice-label">
+              <input type="checkbox" name="truthful_consent" value="Agreed" required>
+              I agree to be truthful in all information provided.
+            </label>
+            <label class="choice-label">
+              <input type="checkbox" name="digital_signature_consent" value="Agreed" required>
+              I agree this qualifys as my digital signature.
+            </label>
+            <label>
+              Client Signature
+              <input type="text" name="applicant_signature_name" required>
+            </label>
+            <label>
+              Date
+              <input type="date" name="application_date" required>
+            </label>
+          </fieldset>
+
+          <button class="button primary" type="submit">Send application</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="script.js?v=20260724-elder-nav-flow"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

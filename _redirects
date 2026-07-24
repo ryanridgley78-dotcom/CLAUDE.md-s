@@ -1,0 +1,3 @@
+# Cloudflare Pages parses this file for path redirects only.
+# Domain-level redirects, such as www to apex, should be configured
+# in Cloudflare as a Redirect Rule.

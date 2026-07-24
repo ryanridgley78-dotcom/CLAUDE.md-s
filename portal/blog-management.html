@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Management | YAH's Misfits</title>
+    <meta name="description" content="Private elder workspace for writing and publishing website blog posts.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="../blogs.html">View Blog</a>
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page portal-website-management-page" aria-labelledby="blog-management-title">
+        <h2 id="blog-management-title">Blog Management</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-short">Loading your elder account...</p>
+        </div>
+        <nav class="portal-editor-tabs portal-builder-tabs portal-elder-primary-tabs" aria-label="Elder workspace sections">
+          <a class="portal-editor-tab" href="/portal/editor.html">Dashboard</a>
+          <a class="portal-editor-tab" href="clients.html">Clients</a>
+          <a class="portal-editor-tab" href="applications.html">Members</a>
+          <a class="portal-editor-tab" href="assessments.html">Assessments</a>
+          <a class="portal-editor-tab" href="messages.html">Messages</a>
+          <a class="portal-editor-tab portal-editor-tab-active" href="management.html">Website</a>
+        </nav>
+        <nav class="portal-editor-tabs portal-context-tabs" aria-label="Website management sections">
+          <a class="portal-editor-tab" href="management.html">Live Controls</a>
+          <a class="portal-editor-tab portal-editor-tab-active" href="blog-management.html">Ryan Blog</a>
+          <a class="portal-editor-tab" href="blog-management-jared-cheshire.html">Jared Blog</a>
+        </nav>
+
+        <form class="connect-form portal-blog-form" aria-label="Write blog post" data-blog-post-form>
+          <p class="portal-message" data-blog-post-message hidden></p>
+          <fieldset class="form-section">
+            <legend>Write Blog Post</legend>
+            <input type="hidden" name="id">
+            <label>
+              Title
+              <input type="text" name="title" placeholder="Blog post title" required>
+            </label>
+            <label>
+              Short Summary
+              <textarea name="excerpt" rows="3" placeholder="Short summary shown on the blog page."></textarea>
+            </label>
+            <label>
+              Body
+              <textarea name="body" rows="12" placeholder="Write the full blog post here." required></textarea>
+            </label>
+            <label>
+              Status
+              <select name="status" required>
+                <option value="draft">Save as draft</option>
+                <option value="published">Publish</option>
+              </select>
+            </label>
+            <div class="portal-blog-actions">
+              <button class="button primary" type="submit">Save post</button>
+              <button class="button secondary" type="button" data-blog-post-reset>Clear form</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <aside class="portal-panel portal-blog-list-panel" aria-label="Blog posts">
+          <h3>Blog Posts</h3>
+          <p>Drafts stay private. Published posts appear on the public Blogs page.</p>
+          <div class="portal-blog-list" data-blog-post-list>
+            <p>Loading blog posts...</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

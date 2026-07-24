@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website Management | YAH's Misfits</title>
+    <meta name="description" content="Private website management controls for YAH's Misfits elders.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260619-patriarch-referral-list">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page portal-website-management-page" aria-labelledby="management-title">
+        <h2 id="management-title">Website Management</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-short">Loading your account...</p>
+        </div>
+        <nav class="portal-editor-tabs portal-builder-tabs portal-elder-primary-tabs" aria-label="Elder workspace sections">
+          <a class="portal-editor-tab" href="/portal/editor.html">Dashboard</a>
+          <a class="portal-editor-tab" href="clients.html">Clients</a>
+          <a class="portal-editor-tab" href="applications.html">Members</a>
+          <a class="portal-editor-tab" href="assessments.html">Assessments</a>
+          <a class="portal-editor-tab" href="messages.html">Messages</a>
+          <a class="portal-editor-tab portal-editor-tab-active" href="management.html">Website</a>
+        </nav>
+        <nav class="portal-editor-tabs portal-context-tabs" aria-label="Website management sections">
+          <a class="portal-editor-tab portal-editor-tab-active" href="management.html">Live Controls</a>
+          <a class="portal-editor-tab" href="blog-management.html">Ryan Blog</a>
+          <a class="portal-editor-tab" href="blog-management-jared-cheshire.html">Jared Blog</a>
+        </nav>
+
+        <section class="portal-management-control-list" id="website-controls" aria-label="Website live controls">
+          <p class="portal-message" data-live-stream-management-message hidden></p>
+          <p class="portal-message" data-forge-live-management-message hidden></p>
+          <div class="portal-management-preview-stack" aria-label="Preview options">
+            <a class="portal-management-control-row portal-management-preview-link" href="member.html?preview=member&amp;preview_source=management">
+              <div>
+                <strong>Member Gate Preview</strong>
+                <p class="form-note">View what qahal members see after signing in.</p>
+              </div>
+              <span class="button secondary">Open Preview</span>
+            </a>
+            <a class="portal-management-control-row portal-management-preview-link" href="dashboard.html?preview=client&amp;preview_source=management">
+              <div>
+                <strong>Client Gate Preview</strong>
+                <p class="form-note">View what enrolled clients see after signing in.</p>
+              </div>
+              <span class="button secondary">Open Preview</span>
+            </a>
+            <a class="portal-management-control-row portal-management-preview-link" href="../patriarchs.html?preview=editor">
+              <div>
+                <strong>Patriarch Application Preview/Edit</strong>
+                <p class="form-note">Open the referral-gated Patriarch application for elder/admin review.</p>
+              </div>
+              <span class="button secondary">Open Application</span>
+            </a>
+          </div>
+          <section class="portal-management-referral-panel" aria-labelledby="patriarch-referrals-title">
+            <div class="portal-management-control-row">
+              <div>
+                <strong id="patriarch-referral-authorities-title">Authorized Referral Codes</strong>
+                <p class="form-note">Give these codes to approved elders or outside authorities who may refer a Patriarch applicant.</p>
+              </div>
+            </div>
+            <div class="portal-management-referral-list" data-patriarch-authority-code-list>
+              <p>Loading authorized referral codes...</p>
+            </div>
+            <div class="portal-management-control-row">
+              <div>
+                <strong id="patriarch-referrals-title">Patriarch Referral Codes</strong>
+                <p class="form-note">Track referral codes, notes, and connected letters before and after applications are submitted.</p>
+              </div>
+              <button class="button secondary" type="button" data-refresh-patriarch-referrals>Refresh</button>
+            </div>
+            <div class="portal-management-referral-list" data-patriarch-referral-list>
+              <p>Loading Patriarch referrals...</p>
+            </div>
+          </section>
+          <div class="portal-management-control-row" data-live-stream-management-form>
+            <div>
+              <strong>Live Stream</strong>
+              <p class="form-note" data-live-stream-management-status>Loading live stream schedule...</p>
+            </div>
+            <input type="hidden" name="live_stream_enabled" value="false" data-live-stream-management-toggle>
+            <div class="portal-on-off-control" role="group" aria-label="Live Stream visibility">
+              <button class="portal-on-off-button" type="button" data-live-stream-set="true">On</button>
+              <button class="portal-on-off-button" type="button" data-live-stream-set="false">Off</button>
+            </div>
+          </div>
+          <div class="portal-management-control-row" data-forge-live-management-form>
+            <div>
+              <strong>Forge Live</strong>
+              <p class="form-note" data-forge-live-management-status>Loading Forge Live setting...</p>
+            </div>
+            <input type="hidden" name="forge_live_enabled" value="false" data-forge-live-management-toggle>
+            <div class="portal-on-off-control" role="group" aria-label="Forge Live visibility">
+              <button class="portal-on-off-button" type="button" data-forge-live-set="true">On</button>
+              <button class="portal-on-off-button" type="button" data-forge-live-set="false">Off</button>
+            </div>
+          </div>
+        </section>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

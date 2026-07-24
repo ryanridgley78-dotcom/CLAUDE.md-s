@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ask a Question | YAH's Misfits</title>
+    <meta
+      name="description"
+      content="Ask a public question for Elder Ryan Ridgley through the YAH's Misfits website."
+    >
+    <meta property="og:title" content="Ask a Question | YAH's Misfits">
+    <meta
+      property="og:description"
+      content="Send a question to Elder Ryan Ridgley through the YAH's Misfits website."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yahsmisfits.com/ask-question.html">
+    <meta property="og:image" content="https://yahsmisfits.com/assets/hero-yhwh-misfits.png">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page">
+    <header class="site-header" data-site-header>
+      <a class="brand" href="index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page ask-question-page" aria-labelledby="ask-question-title">
+        <h2 id="ask-question-title">Ask a Question</h2>
+        <div class="connect-copy">
+          <p>
+            If you have not filled out the Join Qahal application yet, you can send a question here first.
+            This message goes into the website inbox for Elder Ryan Ridgley.
+          </p>
+        </div>
+
+        <form class="connect-form" data-public-question-form action="/api/public-question" method="POST">
+          <p class="portal-message" data-public-question-message hidden></p>
+          <input type="text" name="website" autocomplete="off" tabindex="-1" hidden>
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email Address
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Subject
+            <input type="text" name="subject" maxlength="160" required>
+          </label>
+          <label>
+            Question
+            <textarea name="question" rows="7" required></textarea>
+          </label>
+          <button class="button primary" type="submit">Send question</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="script.js?v=20260724-elder-nav-flow"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

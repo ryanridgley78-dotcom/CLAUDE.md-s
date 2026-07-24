@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Widows Course Builder | YAH's Misfits</title>
+    <meta name="description" content="Elder workspace for building Widows course modules and assignments.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page portal-coursework-management-page" aria-labelledby="widows-coursework-title">
+        <h2 id="widows-coursework-title">Coursework</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-client-management">Loading your elder account...</p>
+        </div>
+        <nav class="portal-editor-tabs portal-course-tabs portal-context-tabs" aria-label="Widows coursework sections">
+          <a class="portal-editor-tab" href="widows-assignment-library.html">Assignment Library</a>
+          <a class="portal-editor-tab" href="widows-required-reading.html">Required Reading</a>
+          <a class="portal-editor-tab" href="widows-scripture.html">Scripture</a>
+          <a class="portal-editor-tab" href="documents.html">Documents</a>
+          <a class="portal-editor-tab" href="daily-task-reports.html">Daily Reports</a>
+          <a class="portal-editor-tab" href="journals.html">Journals</a>
+          <a class="portal-editor-tab" href="dreams.html">Dreams</a>
+        </nav>
+
+        <form class="connect-form portal-path-form portal-course-editor-form" aria-label="Edit Widows coursework" data-account-path-form>
+          <p class="portal-message" data-account-path-message hidden></p>
+          <input type="hidden" name="account_type" value="Widows">
+          <input type="hidden" name="course_code" value="WID-101">
+          <input type="hidden" name="course_status" value="published">
+          <input type="hidden" name="overview" value="">
+          <input type="hidden" name="learning_objectives" value="">
+          <input type="hidden" name="completion_requirements" value="">
+          <input type="hidden" name="progress_tracking" value="">
+          <input type="hidden" name="book_list" value="">
+          <input type="hidden" name="first_lesson" value="">
+          <input type="hidden" name="first_assignment" value="">
+          <div class="portal-course-builder-quickbar">
+            <label>
+              Course Title
+              <input type="text" name="path_title" placeholder="Widows Coursework" required>
+            </label>
+            <label>
+              Assign module to
+              <select data-course-module-client-select>
+                <option value="">Choose a client</option>
+              </select>
+            </label>
+          </div>
+          <p class="portal-message" data-course-module-message hidden></p>
+          <fieldset class="form-section portal-course-module-builder">
+            <legend>Modules</legend>
+            <div class="portal-module-editor-grid" data-course-module-editors></div>
+            <div class="portal-module-footer-actions">
+              <button class="button secondary portal-add-module" type="button" data-add-course-module>Add Module</button>
+              <button class="button primary" type="submit">Save Modules</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

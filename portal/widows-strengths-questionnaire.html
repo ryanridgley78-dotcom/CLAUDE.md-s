@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Widows Strengths Discovery Questionnaire | YAH's Misfits</title>
+    <meta name="description" content="Interactive strengths discovery questionnaire for the Widows program.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page portal-coursework-management-page" aria-labelledby="strengths-title">
+        <h2 id="strengths-title">Widows Strengths Discovery Questionnaire</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-client-management">Loading your elder account...</p>
+        </div>
+        <nav class="portal-editor-tabs portal-course-tabs portal-context-tabs" aria-label="Widows coursework sections">
+          <a class="portal-editor-tab portal-editor-tab-active" href="widows-assignment-library.html">Assignment Library</a>
+          <a class="portal-editor-tab" href="widows-required-reading.html">Required Reading</a>
+          <a class="portal-editor-tab" href="widows-scripture.html">Scripture</a>
+          <a class="portal-editor-tab" href="documents.html">Documents</a>
+          <a class="portal-editor-tab" href="daily-task-reports.html">Daily Reports</a>
+          <a class="portal-editor-tab" href="journals.html">Journals</a>
+          <a class="portal-editor-tab" href="dreams.html">Dreams</a>
+        </nav>
+
+        <article class="portal-panel portal-next-steps strengths-assessment-shell">
+          <div class="strengths-assessment-intro">
+            <p>
+              Read each question slowly and choose the bubble that sounds most like you. Answer from
+              your normal pattern, not from what you think the answer should be.
+            </p>
+            <p>
+              When every question is answered, select Show Strength Results. The page will total your
+              answers and explain your strongest patterns, areas to watch, and places where elder
+              support may help you grow.
+            </p>
+            <p>
+              There are 36 questions. Move quickly and choose the answer that is most true most of the time.
+            </p>
+          </div>
+
+          <form class="strengths-assessment" data-strengths-assessment>
+            <div class="strengths-progress" aria-live="polite" data-strengths-progress>0 of 36 answered</div>
+            <div class="strengths-question-grid" data-strengths-questions></div>
+            <button class="button primary strengths-score-button" type="button" data-strengths-score>
+              Show Strength Results
+            </button>
+          </form>
+
+          <section class="strengths-results" data-strengths-results hidden aria-live="polite"></section>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script>
+      const strengthTypes = {
+        A: {
+          title: "Order and Stewardship",
+          summary: "She naturally notices disorder, missing structure, and unfinished responsibilities. In a household, this strength can help establish rhythm, cleanliness, planning, and faithful stewardship.",
+          caution: "Without humility, this strength can become control, rigidity, or frustration when others do not move at the same pace.",
+        },
+        B: {
+          title: "Compassion and Encouragement",
+          summary: "She naturally notices pain, discouragement, and emotional needs. In a household, this strength can bring warmth, nurture, comfort, and relational care.",
+          caution: "Without boundaries, this strength can absorb too much emotion or avoid needed correction to keep peace.",
+        },
+        C: {
+          title: "Discernment and Truth",
+          summary: "She naturally looks for what is true, hidden, compromised, or out of alignment. In a household, this strength can help guard against confusion and spiritual drift.",
+          caution: "Without gentleness, this strength can become suspicion, harshness, or over-analysis.",
+        },
+        D: {
+          title: "Communication and Connection",
+          summary: "She naturally processes through words, questions, and relational clarity. In a household, this strength can help people feel understood and bring issues into the light.",
+          caution: "Without restraint, this strength can become over-talking, explaining, or delaying action.",
+        },
+        E: {
+          title: "Endurance and Follow-Through",
+          summary: "She naturally keeps going when things are difficult. In a household, this strength can bring consistency, resilience, and faithful completion.",
+          caution: "Without support, this strength can carry too much alone and become weary or quietly resentful.",
+        },
+        F: {
+          title: "Service and Support",
+          summary: "She naturally sees practical needs and steps in to help. In a household, this strength can bring usefulness, diligence, hospitality, and care through action.",
+          caution: "Without deeper reflection, this strength can hide behind busyness while avoiding heart issues.",
+        },
+        G: {
+          title: "Learning and Wisdom",
+          summary: "She naturally wants to understand, study, and gain perspective. In a household, this strength can bring teachability, scriptural reflection, and thoughtful counsel.",
+          caution: "Without obedience, this strength can remain in study and never become action.",
+        },
+        H: {
+          title: "Leadership and Initiative",
+          summary: "She naturally sees direction, movement, and decisions that need to be made. In a household, this strength can bring courage, initiative, and momentum.",
+          caution: "Without submission to order, this strength can become pushy, impatient, or controlling.",
+        },
+      };
+
+      const questions = [
+        {
+          text: "When a household feels unsettled, I naturally want to:",
+          options: {
+            A: "Create structure, clean up, and make a plan.",
+            B: "Comfort the people who are hurting.",
+            C: "Find the root issue and name what is wrong.",
+            D: "Talk through what everyone is feeling.",
+            E: "Stay steady and keep moving through the pressure.",
+            F: "Do whatever practical task is needed first.",
+            G: "Step back, pray, study, and seek understanding.",
+            H: "Take charge and help others know what to do next.",
+          },
+        },
+        {
+          text: "People most often come to me when they need:",
+          options: {
+            A: "Help organizing responsibilities.",
+            B: "Encouragement or emotional support.",
+            C: "Honest feedback or discernment.",
+            D: "Someone to listen and communicate clearly.",
+            E: "Someone dependable who will not quit.",
+            F: "Practical help and support.",
+            G: "Counsel, study, or perspective.",
+            H: "Direction, courage, or decision-making.",
+          },
+        },
+        {
+          text: "I feel most useful when I am:",
+          options: {
+            A: "Bringing order to a messy situation.",
+            B: "Helping someone feel seen and cared for.",
+            C: "Separating truth from confusion.",
+            D: "Helping people understand each other.",
+            E: "Finishing something difficult.",
+            F: "Serving quietly where help is needed.",
+            G: "Learning something that brings wisdom.",
+            H: "Leading a task or helping others move forward.",
+          },
+        },
+        {
+          text: "Under pressure, my first instinct is usually to:",
+          options: {
+            A: "Make a list or organize the next steps.",
+            B: "Notice who is emotionally affected.",
+            C: "Watch for deception, disorder, or hidden issues.",
+            D: "Talk it out or ask questions.",
+            E: "Endure and keep going.",
+            F: "Start helping with immediate needs.",
+            G: "Seek counsel, Scripture, or more information.",
+            H: "Make a decision and act.",
+          },
+        },
+        {
+          text: "Which statement best describes your natural contribution?",
+          options: {
+            A: "I bring order.",
+            B: "I bring comfort.",
+            C: "I bring discernment.",
+            D: "I bring connection.",
+            E: "I bring consistency.",
+            F: "I bring help.",
+            G: "I bring understanding.",
+            H: "I bring direction.",
+          },
+        },
+        {
+          text: "When correction is given, I most need to work on:",
+          options: {
+            A: "Not becoming rigid about my own way.",
+            B: "Not taking correction too personally.",
+            C: "Not becoming suspicious or overly critical.",
+            D: "Listening before explaining myself.",
+            E: "Receiving correction without discouragement.",
+            F: "Not hiding behind busyness or service.",
+            G: "Applying what I learn instead of only studying it.",
+            H: "Submitting instead of taking control.",
+          },
+        },
+        {
+          text: "In a righteous household, I believe I could best help by:",
+          options: {
+            A: "Keeping rhythms, responsibilities, and order.",
+            B: "Bringing warmth, nurture, and encouragement.",
+            C: "Helping guard the home from compromise.",
+            D: "Strengthening communication and peace.",
+            E: "Being faithful in repeated daily duties.",
+            F: "Supporting the household through practical service.",
+            G: "Helping children or others learn truth.",
+            H: "Helping move the household toward goals.",
+          },
+        },
+        {
+          text: "Which kind of assignment would you most naturally do well?",
+          options: {
+            A: "A household plan or weekly schedule.",
+            B: "A reflection on emotional healing.",
+            C: "A discernment worksheet.",
+            D: "A conversation or relationship reflection.",
+            E: "A daily consistency tracker.",
+            F: "A service task with practical steps.",
+            G: "A reading or Scripture study assignment.",
+            H: "A vision, goals, or leadership assignment.",
+          },
+        },
+        {
+          text: "When someone is struggling, I am most likely to:",
+          options: {
+            A: "Help them create order around the problem.",
+            B: "Encourage and comfort them.",
+            C: "Help them see the truth clearly.",
+            D: "Ask questions and listen carefully.",
+            E: "Remain steady with them over time.",
+            F: "Help with practical needs.",
+            G: "Share wisdom, Scripture, or resources.",
+            H: "Challenge them to take the next right step.",
+          },
+        },
+        {
+          text: "Which weakness do you recognize most in yourself?",
+          options: {
+            A: "I can become controlling when things feel disordered.",
+            B: "I can absorb other people's emotions too deeply.",
+            C: "I can become too blunt or suspicious.",
+            D: "I can talk too much or avoid hard conclusions.",
+            E: "I can keep going without asking for help.",
+            F: "I can serve while neglecting deeper issues.",
+            G: "I can study without acting.",
+            H: "I can push forward without enough patience.",
+          },
+        },
+        {
+          text: "I feel most peaceful when:",
+          options: {
+            A: "Things are clean, clear, and structured.",
+            B: "People feel loved and cared for.",
+            C: "Truth is clear and compromise is removed.",
+            D: "Communication is open and respectful.",
+            E: "I know I am being faithful over time.",
+            F: "Needs are being met.",
+            G: "I understand what YHWH is teaching me.",
+            H: "There is clear direction and movement.",
+          },
+        },
+        {
+          text: "Which phrase sounds most like you?",
+          options: {
+            A: "Let us put things in order.",
+            B: "Let me sit with you and encourage you.",
+            C: "Let us examine what is really happening.",
+            D: "Let us talk this through clearly.",
+            E: "Let us keep going and not give up.",
+            F: "Let me help with what needs to be done.",
+            G: "Let me study this and bring understanding.",
+            H: "Let us decide and move forward.",
+          },
+        },
+        {
+          text: "When I enter a new environment, I first notice:",
+          options: {
+            A: "What is disorganized or missing structure.",
+            B: "Who seems uncomfortable or unseen.",
+            C: "Whether the atmosphere feels clean or compromised.",
+            D: "How people are relating to one another.",
+            E: "What must be done consistently over time.",
+            F: "Where help is immediately needed.",
+            G: "What I need to understand before acting.",
+            H: "What direction or decision is needed.",
+          },
+        },
+        {
+          text: "When a plan changes suddenly, I tend to:",
+          options: {
+            A: "Rework the plan and restore order.",
+            B: "Check how the change affects people emotionally.",
+            C: "Question why the change happened.",
+            D: "Clarify the change through conversation.",
+            E: "Adjust and keep moving.",
+            F: "Ask what practical help is needed now.",
+            G: "Pause to learn what the change means.",
+            H: "Make a quick decision and redirect the group.",
+          },
+        },
+        {
+          text: "I am most frustrated when:",
+          options: {
+            A: "Things are chaotic or poorly managed.",
+            B: "People are treated without care.",
+            C: "Truth is avoided or compromised.",
+            D: "Communication is confusing or withheld.",
+            E: "People quit before the work is finished.",
+            F: "Needs are ignored when someone could help.",
+            G: "People act without understanding.",
+            H: "No one will take responsibility.",
+          },
+        },
+        {
+          text: "When learning something new, I prefer to:",
+          options: {
+            A: "Put the information into a clear system.",
+            B: "Understand how it affects people.",
+            C: "Test whether it is true.",
+            D: "Discuss it until it becomes clear.",
+            E: "Practice it repeatedly until it sticks.",
+            F: "Use it in a practical task.",
+            G: "Study the background and meaning.",
+            H: "Apply it toward a goal.",
+          },
+        },
+        {
+          text: "If someone gives me responsibility, I naturally focus on:",
+          options: {
+            A: "Making sure the responsibility is organized.",
+            B: "Caring for the people involved.",
+            C: "Making sure the responsibility is handled rightly.",
+            D: "Keeping communication clear.",
+            E: "Finishing what I was trusted with.",
+            F: "Supporting the work however needed.",
+            G: "Understanding what is expected.",
+            H: "Moving the responsibility forward.",
+          },
+        },
+        {
+          text: "When I look back over my life, my growth has often come through:",
+          options: {
+            A: "Learning better order and stewardship.",
+            B: "Learning compassion through pain.",
+            C: "Learning to discern truth from deception.",
+            D: "Learning how to communicate more clearly.",
+            E: "Learning endurance through hard seasons.",
+            F: "Learning humility through service.",
+            G: "Learning wisdom through study and correction.",
+            H: "Learning courage through responsibility.",
+          },
+        },
+        {
+          text: "When I am given free time, I often want to:",
+          options: {
+            A: "Catch up on order, cleaning, or planning.",
+            B: "Connect with someone I care about.",
+            C: "Think through what has been bothering me.",
+            D: "Talk, write, or process out loud.",
+            E: "Finish something I started.",
+            F: "Help someone with a need.",
+            G: "Read, learn, or research.",
+            H: "Work on a goal or project.",
+          },
+        },
+        {
+          text: "In a group setting, I usually become the person who:",
+          options: {
+            A: "Keeps things organized.",
+            B: "Encourages the discouraged.",
+            C: "Asks whether something is right.",
+            D: "Helps people communicate.",
+            E: "Keeps showing up faithfully.",
+            F: "Handles the practical needs.",
+            G: "Brings information or perspective.",
+            H: "Helps the group take action.",
+          },
+        },
+        {
+          text: "When I hear a teaching, I naturally ask:",
+          options: {
+            A: "How should this change my daily order?",
+            B: "How should this shape how I love people?",
+            C: "Is this true and aligned with Scripture?",
+            D: "How can this be explained clearly?",
+            E: "How do I walk this out consistently?",
+            F: "How can I serve with this truth?",
+            G: "What else do I need to study?",
+            H: "What decision does this require?",
+          },
+        },
+        {
+          text: "When I am hurt, I am most likely to:",
+          options: {
+            A: "Try to regain control of my surroundings.",
+            B: "Feel deeply and need reassurance.",
+            C: "Analyze what happened and why.",
+            D: "Need to talk it through.",
+            E: "Keep functioning even while hurting.",
+            F: "Serve others instead of facing it directly.",
+            G: "Search for meaning or understanding.",
+            H: "Push forward and avoid feeling stuck.",
+          },
+        },
+        {
+          text: "What kind of praise feels most meaningful to me?",
+          options: {
+            A: "You are responsible and orderly.",
+            B: "You are caring and encouraging.",
+            C: "You see things clearly.",
+            D: "You communicate with wisdom.",
+            E: "You are faithful and steady.",
+            F: "You are helpful and dependable.",
+            G: "You are thoughtful and teachable.",
+            H: "You are courageous and decisive.",
+          },
+        },
+        {
+          text: "If a child in the household is struggling, I first want to:",
+          options: {
+            A: "Create better routine and boundaries.",
+            B: "Comfort and reassure the child.",
+            C: "Discern the heart issue.",
+            D: "Ask questions and listen.",
+            E: "Stay consistent with correction over time.",
+            F: "Help with whatever practical need is present.",
+            G: "Understand what is shaping the behavior.",
+            H: "Set direction and expectation quickly.",
+          },
+        },
+        {
+          text: "My strongest work usually happens when:",
+          options: {
+            A: "There is a clear system.",
+            B: "There is relational warmth.",
+            C: "There is truth and integrity.",
+            D: "There is open communication.",
+            E: "There is enough time to finish well.",
+            F: "There is a clear need to serve.",
+            G: "There is room to learn deeply.",
+            H: "There is a goal to pursue.",
+          },
+        },
+        {
+          text: "When someone is making poor choices, I tend to:",
+          options: {
+            A: "Suggest structure and accountability.",
+            B: "Encourage them without crushing them.",
+            C: "Name the truth directly.",
+            D: "Ask questions to draw out the issue.",
+            E: "Walk with them patiently.",
+            F: "Offer practical help.",
+            G: "Point them toward wisdom and study.",
+            H: "Challenge them to act differently.",
+          },
+        },
+        {
+          text: "I feel most drained when I have to:",
+          options: {
+            A: "Live with constant disorder.",
+            B: "Be around emotional coldness.",
+            C: "Ignore compromise.",
+            D: "Function with poor communication.",
+            E: "Start over repeatedly without progress.",
+            F: "Watch needs go unmet.",
+            G: "Act without understanding.",
+            H: "Wait when a decision is obvious.",
+          },
+        },
+        {
+          text: "When elders give an assignment, I am most likely to succeed if:",
+          options: {
+            A: "The steps and expectations are clear.",
+            B: "I understand the heart purpose behind it.",
+            C: "I know what truth it is meant to expose.",
+            D: "I can ask questions and process it.",
+            E: "I can track progress over time.",
+            F: "I know how it helps someone practically.",
+            G: "I can study and reflect deeply.",
+            H: "I can see the goal and outcome.",
+          },
+        },
+        {
+          text: "When I think about serving a future household, I want to be known as:",
+          options: {
+            A: "A woman who brings order.",
+            B: "A woman who brings nurture.",
+            C: "A woman who guards truth.",
+            D: "A woman who brings peace through communication.",
+            E: "A woman who remains faithful.",
+            F: "A woman who serves willingly.",
+            G: "A woman who walks in wisdom.",
+            H: "A woman who helps build.",
+          },
+        },
+        {
+          text: "When I make mistakes, my best path back is usually:",
+          options: {
+            A: "A corrected plan and better structure.",
+            B: "Gentle encouragement and honesty.",
+            C: "Clear truth and repentance.",
+            D: "Conversation and understanding.",
+            E: "Consistency after correction.",
+            F: "Humble service and repair.",
+            G: "Learning what I missed.",
+            H: "Taking responsibility quickly.",
+          },
+        },
+        {
+          text: "Which kind of responsibility would stretch me in a good way?",
+          options: {
+            A: "Managing a home rhythm.",
+            B: "Caring for someone emotionally.",
+            C: "Examining a difficult issue.",
+            D: "Leading a hard conversation.",
+            E: "Building a long-term habit.",
+            F: "Serving in an unseen role.",
+            G: "Studying and presenting what I learned.",
+            H: "Organizing people toward a goal.",
+          },
+        },
+        {
+          text: "When I am spiritually strong, I usually show it through:",
+          options: {
+            A: "Orderly obedience.",
+            B: "Tenderness and mercy.",
+            C: "Truth and conviction.",
+            D: "Wise speech.",
+            E: "Steadfastness.",
+            F: "Faithful service.",
+            G: "Teachability.",
+            H: "Courageous action.",
+          },
+        },
+        {
+          text: "What kind of correction is hardest for me to receive?",
+          options: {
+            A: "Correction about control or order.",
+            B: "Correction about emotions or sensitivity.",
+            C: "Correction about harshness or suspicion.",
+            D: "Correction about talking or listening.",
+            E: "Correction about discouragement or stubbornness.",
+            F: "Correction about hiding behind service.",
+            G: "Correction about overthinking.",
+            H: "Correction about impatience or independence.",
+          },
+        },
+        {
+          text: "When I am part of a team, I usually add:",
+          options: {
+            A: "Organization.",
+            B: "Warmth.",
+            C: "Discernment.",
+            D: "Clarity.",
+            E: "Reliability.",
+            F: "Helpfulness.",
+            G: "Insight.",
+            H: "Momentum.",
+          },
+        },
+        {
+          text: "The kind of fruit I most want to grow in is:",
+          options: {
+            A: "Faithful stewardship.",
+            B: "Deeper compassion.",
+            C: "Cleaner discernment.",
+            D: "Gentler communication.",
+            E: "Patient endurance.",
+            F: "Humble service.",
+            G: "Applied wisdom.",
+            H: "Submitted initiative.",
+          },
+        },
+        {
+          text: "If I could ask elders for help in one area, it would be:",
+          options: {
+            A: "Building order and routine.",
+            B: "Healing and emotional stability.",
+            C: "Discernment and truth.",
+            D: "Communication and relationship patterns.",
+            E: "Consistency and endurance.",
+            F: "Healthy service and boundaries.",
+            G: "Learning and applying wisdom.",
+            H: "Direction and submitted leadership.",
+          },
+        },
+      ];
+
+      const questionContainer = document.querySelector("[data-strengths-questions]");
+      const progress = document.querySelector("[data-strengths-progress]");
+      const results = document.querySelector("[data-strengths-results]");
+      const scoreButton = document.querySelector("[data-strengths-score]");
+
+      function renderQuestions() {
+        questionContainer.innerHTML = questions.map((question, index) => `
+          <fieldset class="strengths-question-card">
+            <legend>
+              <span>Question ${index + 1}</span>
+              ${question.text}
+            </legend>
+            <div class="strengths-choice-grid">
+              ${Object.entries(question.options).map(([letter, text]) => `
+                <label class="strengths-choice">
+                  <input type="radio" name="question_${index}" value="${letter}">
+                  <span class="strengths-choice-bubble">${letter}</span>
+                  <span>${text}</span>
+                </label>
+              `).join("")}
+            </div>
+          </fieldset>
+        `).join("");
+      }
+
+      function getScores() {
+        const scores = Object.fromEntries(Object.keys(strengthTypes).map((letter) => [letter, 0]));
+        const answers = new FormData(document.querySelector("[data-strengths-assessment]"));
+        for (const value of answers.values()) {
+          if (scores[value] !== undefined) scores[value] += 1;
+        }
+        return scores;
+      }
+
+      function updateProgress() {
+        const answered = document.querySelectorAll(".strengths-choice input:checked").length;
+        progress.textContent = `${answered} of ${questions.length} answered`;
+      }
+
+      function showResults() {
+        const answered = document.querySelectorAll(".strengths-choice input:checked").length;
+        if (answered < questions.length) {
+          results.hidden = false;
+          results.innerHTML = `
+            <h3>Finish the Assessment</h3>
+            <p>Please answer all ${questions.length} questions before viewing the strength results.</p>
+          `;
+          results.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+
+        const scores = getScores();
+        const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        const top = ranked.slice(0, 3);
+        const lowest = [...ranked].reverse().slice(0, 2);
+        const scoreRows = ranked.map(([letter, score]) => `
+          <li>
+            <strong>${letter}</strong>
+            <span>${strengthTypes[letter].title}</span>
+            <b>${score}</b>
+          </li>
+        `).join("");
+
+        results.hidden = false;
+        results.innerHTML = `
+          <h3>Strength Results</h3>
+          <p>The strongest patterns are ${top.map(([letter]) => strengthTypes[letter].title).join(", ")}.</p>
+          <div class="strengths-result-grid">
+            ${top.map(([letter, score]) => `
+              <article class="strengths-result-card">
+                <span>${letter} · ${score} answers</span>
+                <h4>${strengthTypes[letter].title}</h4>
+                <p>${strengthTypes[letter].summary}</p>
+                <p><strong>Watch area:</strong> ${strengthTypes[letter].caution}</p>
+              </article>
+            `).join("")}
+          </div>
+          <div class="strengths-score-table">
+            <h4>Full Score Breakdown</h4>
+            <ul>${scoreRows}</ul>
+          </div>
+          <div class="strengths-low-patterns">
+            <h4>Lower Patterns to Support</h4>
+            <p>${lowest.map(([letter]) => strengthTypes[letter].title).join(" and ")} may need additional practice, support, or intentional development.</p>
+          </div>
+        `;
+        results.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      renderQuestions();
+      updateProgress();
+      questionContainer.addEventListener("change", updateProgress);
+      scoreButton.addEventListener("click", showResults);
+    </script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

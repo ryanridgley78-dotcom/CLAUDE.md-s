@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Coursework | YAH's Misfits</title>
+    <meta name="description" content="Private elder workspace for assigning and reviewing one client's coursework.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page" aria-labelledby="client-coursework-title">
+        <p class="portal-eyebrow" data-portal-role>Editor</p>
+        <h2 id="client-coursework-title" data-client-coursework-title>Client Coursework</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-client-management">Loading your elder account...</p>
+        </div>
+        <section class="portal-panel portal-next-steps portal-client-module-plan" aria-label="Individual module progress">
+          <h3>Individual Learning Plan</h3>
+          <p>Track the modules this client needs. Assign only the work that supports her current growth and review needs.</p>
+          <p class="portal-message" data-client-module-progress-message hidden></p>
+          <div class="portal-client-module-list" data-client-module-plan>
+            <p>Loading module plan...</p>
+          </div>
+        </section>
+
+        <form class="connect-form portal-path-form" aria-label="Assign client coursework" data-client-coursework-form>
+          <p class="portal-message" data-client-coursework-message hidden></p>
+          <fieldset class="form-section">
+            <legend>Assign Coursework</legend>
+            <input type="hidden" name="client_email">
+            <input type="hidden" name="client_name">
+            <input type="hidden" name="module_index" value="-1">
+            <label>
+              Type
+              <select name="item_type" required>
+                <option value="course">Course</option>
+                <option value="assignment">Assignment</option>
+                <option value="daily_report">Daily Task Report</option>
+                <option value="journal">Journal</option>
+                <option value="dream">Dream</option>
+              </select>
+            </label>
+            <label>
+              Title
+              <input type="text" name="title" placeholder="Example: Week 1 Repentance Reflection" required>
+            </label>
+            <label>
+              Due Date
+              <input type="date" name="due_date">
+            </label>
+            <label>
+              Instructions
+              <textarea name="instructions" rows="6" placeholder="Add the course, assignment, prompt, or elder instructions for this client."></textarea>
+            </label>
+            <button class="button primary" type="submit">Assign to client</button>
+          </fieldset>
+        </form>
+
+        <aside class="portal-panel portal-next-steps" aria-label="Assigned client coursework">
+          <h3>Assigned Coursework</h3>
+          <div class="portal-client-list" data-client-coursework-items>
+            <p>Loading assigned coursework...</p>
+          </div>
+        </aside>
+
+        <form class="connect-form portal-path-form portal-document-upload-form" aria-label="Upload client document" data-portal-document-form data-client-document-context>
+          <p class="portal-message" data-portal-document-message hidden></p>
+          <fieldset class="form-section">
+            <legend>Upload Client Document</legend>
+            <input type="hidden" name="document_scope" value="client">
+            <input type="hidden" name="client_email">
+            <input type="hidden" name="client_name">
+            <label>
+              Title
+              <input type="text" name="title" placeholder="Example: Module 1 Worksheet" required>
+            </label>
+            <label>
+              Document
+              <input type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.rtf,.png,.jpg,.jpeg,.webp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,text/rtf,application/rtf,image/png,image/jpeg,image/webp" required>
+            </label>
+            <label class="portal-course-field-wide">
+              Notes
+              <textarea name="description" rows="3" placeholder="Optional notes that will appear with the document."></textarea>
+            </label>
+            <button class="button primary" type="submit">Upload to client</button>
+          </fieldset>
+        </form>
+
+        <aside class="portal-panel portal-next-steps" aria-label="Client documents">
+          <h3>Client Documents</h3>
+          <div class="portal-workspace-grid portal-document-grid" data-client-document-list>
+            <p>Loading client documents...</p>
+          </div>
+        </aside>
+
+        <aside class="portal-panel portal-next-steps" aria-label="Client daily task reports">
+          <h3>Daily Task Reports</h3>
+          <div class="portal-client-list" data-client-coursework-reports>
+            <p>Loading daily task reports...</p>
+          </div>
+        </aside>
+
+        <aside class="portal-panel portal-next-steps" aria-label="Client journals and dreams">
+          <h3>Journals and Dreams</h3>
+          <div class="portal-client-list" data-client-coursework-reflections>
+            <p>Loading journals and dreams...</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>

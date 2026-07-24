@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Documents | YAH's Misfits</title>
+    <meta name="description" content="Private elder document library for client gate coursework.">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <meta name="theme-color" content="#163430">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="YHWH's Misfits">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../styles.css?v=20260612-live-stream-visible-disabled">
+  </head>
+  <body class="inner-page portal-page" data-editor-only-page>
+    <header class="site-header" data-site-header>
+      <a class="brand" href="../index.html" aria-label="YHWH's Misfits home">
+        <span class="brand-mark" aria-hidden="true">YM</span>
+        <span>YHWH's Misfits</span>
+      </a>
+      <div class="header-actions" aria-label="Gate actions">
+        <a class="header-button" href="/portal/editor.html">Dashboard</a>
+        <button class="header-button" type="button" data-portal-logout>Sign out</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="connect-section connect-page portal-shell portal-elder-section-page" aria-labelledby="documents-title">
+        <h2 id="documents-title">Documents</h2>
+        <div class="connect-copy portal-client-page-welcome">
+          <p data-portal-welcome data-portal-welcome-template="elder-client-management">Loading your elder account...</p>
+        </div>
+        <nav class="portal-editor-tabs portal-course-tabs portal-context-tabs" aria-label="Widows coursework sections">
+          <a class="portal-editor-tab" href="widows-assignment-library.html">Assignment Library</a>
+          <a class="portal-editor-tab" href="widows-required-reading.html">Required Reading</a>
+          <a class="portal-editor-tab" href="widows-scripture.html">Scripture</a>
+          <a class="portal-editor-tab portal-editor-tab-active" href="documents.html">Documents</a>
+          <a class="portal-editor-tab" href="daily-task-reports.html">Daily Reports</a>
+          <a class="portal-editor-tab" href="journals.html">Journals</a>
+          <a class="portal-editor-tab" href="dreams.html">Dreams</a>
+        </nav>
+
+        <div class="portal-section-heading">
+          <h3>Document Library</h3>
+          <p>Upload documents for the elder library or assign a file directly to one client.</p>
+        </div>
+
+        <form class="connect-form portal-path-form portal-document-upload-form" aria-label="Upload portal document" data-portal-document-form>
+          <p class="portal-message" data-portal-document-message hidden></p>
+          <fieldset class="form-section">
+            <legend>Upload Document</legend>
+            <label>
+              Destination
+              <select name="document_scope" data-document-scope>
+                <option value="library">Elder library and client course homes</option>
+                <option value="client">One client only</option>
+              </select>
+            </label>
+            <label data-document-client-field hidden>
+              Client
+              <select name="client_email" data-document-client-select>
+                <option value="">Choose a client</option>
+              </select>
+            </label>
+            <input type="hidden" name="client_name">
+            <label>
+              Title
+              <input type="text" name="title" placeholder="Example: Week 1 Repentance Worksheet" required>
+            </label>
+            <label>
+              Document
+              <input type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.txt,.rtf,.png,.jpg,.jpeg,.webp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/plain,text/rtf,application/rtf,image/png,image/jpeg,image/webp" required>
+            </label>
+            <label class="portal-course-field-wide">
+              Notes
+              <textarea name="description" rows="3" placeholder="Optional notes about when or how this document should be used."></textarea>
+            </label>
+            <button class="button primary" type="submit">Upload document</button>
+          </fieldset>
+        </form>
+
+        <div class="portal-workspace-grid portal-document-grid" aria-label="Documents" data-portal-document-list>
+          <a class="portal-workspace-card" href="../assets/documents/five-step-repentance-redemption-outline.pdf" target="_blank" rel="noopener">
+            <span>Widows Course Reference</span>
+            <strong>Five-Step Pattern of Repentance and Redemption</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> YAH's Misfits. All rights reserved.</p>
+      <a href="mailto:yahwins@zohomail.com">yahwins@zohomail.com</a>
+    </footer>
+
+    <script src="../script.js?v=20260724-elder-nav-flow"></script>
+    <script src="../assets/portal.js?v=20260702-preview-created-only"></script>
+    <script src="/app-portal-cache.js?v=20260702-portal-network-first"></script>
+  </body>
+</html>
